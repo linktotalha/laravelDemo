@@ -3,6 +3,7 @@
 @section('content')
     <div class="row">
         <div class="col-md-8">
+            <div class="p-3 text-center"><h1>Add Category</h1></div>
             <form id="formSubmit">
                 <div class="mb-3">
                     <label for="" class="form-label">Category Name</label>

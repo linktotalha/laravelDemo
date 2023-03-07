@@ -29,6 +29,7 @@ Route::get('/dashboard', function () {
 
 Route::get('categories',[CategoryController::class,'categories']);
 Route::post('add_categories',[CategoryController::class,'add_categories']);
-
+Route::get('category_list',[CategoryController::class,'categoriesList']);
+Route::get('delete_category/{id}',[CategoryController::class,'deleteCategory']);
 
 require __DIR__ . '/auth.php';

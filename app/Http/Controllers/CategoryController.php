@@ -33,4 +33,15 @@ class CategoryController extends Controller
      ]);
      return response()->json(['message'=>"Data Added Successfully"]);
     }
+
+    public function categoriesList(){
+        $categories = Category::all();
+        return view('category_list',compact('categories'));
+    }
+
+    public function deleteCategory($id){
+        $category = Category::find($id);
+        $category->delete();
+        return response()->json(['message'=>'Data deleted Successfully']);
+    }
 }
