@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AdminLTE 3 | Dashboard</title>
 
-    <link rel="stylesheet"
+    {{-- <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
@@ -25,7 +25,8 @@
 
     <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
 
-    <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+    <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css"> --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
     <script nonce="022a2f1a-818c-4687-97c1-f867f028bd53">
         (function(w, d) {
             ! function(bv, bw, bx, by) {
@@ -1561,7 +1562,7 @@
     </div>
 
 
-    <script src="plugins/jquery/jquery.min.js"></script>
+    {{-- <script src="plugins/jquery/jquery.min.js"></script>
 
     <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
 
@@ -1593,7 +1594,8 @@
 
     <script src="dist/js/demo.js"></script>
 
-    <script src="dist/js/pages/dashboard.js"></script>
+    <script src="dist/js/pages/dashboard.js"></script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
     <script src="{{asset('js/app.js')}}"></script>
 </body>
 
