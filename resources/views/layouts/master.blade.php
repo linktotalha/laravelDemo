@@ -288,7 +288,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/category" class="nav-link">
+                            <a href="{{url('categories')}}" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
                                     Categories
@@ -1573,6 +1573,7 @@
 
     <script src="dist/js/pages/dashboard.js"></script>
     <script src="{{asset('js/app.js')}}"></script>
+    @yield('scripts')
 </body>
 
 </html>
