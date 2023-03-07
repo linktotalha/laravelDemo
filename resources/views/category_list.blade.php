@@ -20,7 +20,7 @@
                             <td>{{$category->name}}</td>
                             <td>{{$category->desc}}</td>
                             <td>
-                                <button class="btn">Edit</button>
+                                <a href="{{url('edit_category/'.$category->id)}}" class="btn">Edit</a>
                                 <button class="btn deleteBtn" value="{{$category->id}}">Delete</button>
                             </td>
                         </tr>
