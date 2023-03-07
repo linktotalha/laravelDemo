@@ -18,6 +18,8 @@ class Admin
     {
         if(Auth::user()->roles == 1){
             return $next($request);
+        }else {
+            return response()->json(['message'=>'Unauthorized']);
         }
         
     }

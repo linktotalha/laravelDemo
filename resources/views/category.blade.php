@@ -42,9 +42,11 @@
                         if(res.desc !== ''){
                             $('.descErr').html(res.desc)
                         }
-                        if(res.message !== ''){
+                        if(res.message){
                             toastr.success(res.message);
                             $("#formSubmit").trigger('reset');
+                            $('.nameErr').html('');
+                            $('.descErr').html('');
                         }
                     }
                 });
