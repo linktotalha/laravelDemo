@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,8 +17,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Route::prefix('admin')->group(function () {
+//     Route::get('/dashboard', function () {
+//         return view('dashboard');
+//     });
+// });
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
 
-require __DIR__.'/auth.php';
+Route::get('/category',function () {
+    return view('category');
+});
+
+
+require __DIR__ . '/auth.php';
