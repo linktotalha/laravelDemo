@@ -28,7 +28,7 @@ Route::get('/dashboard', function () {
 });
 
 Route::get('categories',[CategoryController::class,'categories']);
-Route::post('categories',[CategoryController::class,'add_categories']);
+Route::post('add_categories',[CategoryController::class,'add_categories']);
 
 
 require __DIR__ . '/auth.php';

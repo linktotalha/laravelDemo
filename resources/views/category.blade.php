@@ -3,14 +3,16 @@
 @section('content')
     <div class="row">
         <div class="col-md-8">
-            <form>
+            <form id="formSubmit">
                 <div class="mb-3">
                     <label for="" class="form-label">Category Name</label>
                     <input type="text" name="name" class="form-control" id="">
+                    <span class="nameErr text-danger"></span>
                 </div>
                 <div class="mb-3">
                     <label for="desc" class="form-label">Description</label>
-                    <textarea type="text" class="form-control" id="desc"></textarea>
+                    <textarea type="text" name="desc" class="form-control" id="desc"></textarea>
+                    <span class="descErr text-danger"></span>
                 </div>
                 <button type="button" id="submitBtn" class="btn btn-primary">Submit</button>
             </form>
@@ -19,17 +21,31 @@
 @endsection
 
 @section('scripts')
-
-<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function() {
             $("#submitBtn").click(function(e) {
                 e.preventDefault();
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
                 $.ajax({
-                    type: "POST",
-                    url: "/categories",
-                    success:function(res) {
+                    method: "POST",
+                    url: "{{ url('/add_categories') }}",
+                    data: $('#formSubmit').serialize(),
+                    success: function(res) {
                         console.log(res);
+                        if(res.name !== ''){
+                            $('.nameErr').html(res.name)
+                        }
+                        if(res.desc !== ''){
+                            $('.descErr').html(res.desc)
+                        }
+                        if(res.message !== ''){
+                            toastr.success(res.message);
+                            $("#formSubmit").trigger('reset');
+                        }
                     }
                 });
             });
