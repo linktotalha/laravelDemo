@@ -9,9 +9,12 @@
     <meta name="description" content="Customer Relationship Management">
     <!-- Fav Icon  -->
     <link rel="shortcut icon" href="{{asset('images/favicon.png')}}">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.3/css/jquery.dataTables.min.css
+    ">
     <!-- Page Title  -->
     <title>CRM</title>
     <!-- StyleSheets  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="{{mix('css/theme.css')}}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <style>
@@ -814,6 +817,9 @@
 
     <!-- JavaScript -->
     <script src="{{mix('js/theme.js')}}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
+    @yield('scripts')
     {{-- @stack('scripts') --}}
 </body>
 
