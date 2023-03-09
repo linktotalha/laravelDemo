@@ -17,6 +17,8 @@ use App\Http\Controllers\CategoryController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// routes only accessable by admin using package spatie
 Route::middleware(['role:admin'])->group(function () {
     Route::get('categories/create',[CategoryController::class,'create']);
     Route::post('categories/create',[CategoryController::class,'postCreate']);
