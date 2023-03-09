@@ -21,6 +21,8 @@ Route::get('categories/create',[CategoryController::class,'create']);
 Route::post('categories/create',[CategoryController::class,'postCreate']);
 Route::get('category-list',[CategoryController::class,'list']);
 Route::get('delete-category',[CategoryController::class,'delete']);
+Route::get('edit-category',[CategoryController::class,'edit']);
+Route::post('edit-category',[CategoryController::class,'postEdit']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

@@ -40,4 +40,17 @@ class CategoryController extends Controller
         $category->delete();
         return response()->json(['message'=>"Data deleted successfully"]);
     }
+
+    public function edit(Request $req) {
+        $category = Category::find($req->id);
+        return response()->json(['category'=>$category]);
+    }
+    public function postEdit(Request $req){
+        $category = Category::find($req->edit_id);
+        $category->update([
+            'name'=>$req->edit_name,
+            'desc'=>$req->edit_desc
+        ]);
+        return response()->json(['message'=>'Data updated successfully']);
+    }
 }
